@@ -1,0 +1,29 @@
+.cart-item img {
+    max-width: 100px;
+    height: auto;
+    border-radius: 0.85rem;
+}
+
+.quantity-input {
+    width: 50px;
+}
+
+.cart-summary {
+    background-color: #ffffff;
+    border-radius: 1.25rem;
+}
+
+.cart-item hr {
+    margin-top: 10px;
+    height: 2px;
+    background-color: #e2e2e2;
+    border: none;
+}
+
+.cart-card {
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.cart-page .btn-outline-secondary {
+    border-radius: 999px;
+}

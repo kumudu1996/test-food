@@ -1,0 +1,11 @@
+.table td {
+    vertical-align: middle;
+}
+
+.table {
+    margin-bottom: 0;
+}
+
+.table tr {
+    border-color: rgba(148, 163, 184, 0.2);
+}

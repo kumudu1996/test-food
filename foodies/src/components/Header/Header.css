@@ -1,0 +1,30 @@
+.header {
+    position: relative;
+    padding: 5rem;
+    margin-bottom: 2rem;
+    border-radius: 1.5rem;
+    margin-top: 1rem;
+    color: white;
+    background-image: url("../../assets/header.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, rgba(31, 41, 55, 0.75), rgba(255, 107, 61, 0.45));
+    z-index: 0;
+}
+
+.header > .container-fluid {
+    position: relative;
+    z-index: 1;
+}
+
+.header .btn {
+    box-shadow: 0 14px 30px rgba(15, 23, 42, 0.2);
+}
