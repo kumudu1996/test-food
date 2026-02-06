@@ -30,6 +30,12 @@ const Sidebar = ({ sidebarVisible }) => {
         >
           <i className="bi bi-cart me-2"></i> Orders
         </Link>
+        <Link
+          className="list-group-item list-group-item-action list-group-item-light p-3"
+          to="/delivery"
+        >
+          <i className="bi bi-truck me-2"></i> Delivery
+        </Link>
       </div>
     </div>
   );

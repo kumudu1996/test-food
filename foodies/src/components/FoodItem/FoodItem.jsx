@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { StoreContext } from "../../context/StoreContext";
+import { assets } from "../../assets/assets";
 
 const FoodItem = ({ name, description, id, imageUrl, price }) => {
   const { increaseQty, decreaseQty, quantities } = useContext(StoreContext);
@@ -10,7 +11,7 @@ const FoodItem = ({ name, description, id, imageUrl, price }) => {
       <div className="card food-card" style={{ maxWidth: "320px" }}>
         <Link to={`/food/${id}`}>
           <img
-            src={imageUrl}
+            src={imageUrl || assets.logo}
             className="card-img-top"
             alt="Product Image"
             height={300}

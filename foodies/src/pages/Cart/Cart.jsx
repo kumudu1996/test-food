@@ -3,6 +3,7 @@ import { StoreContext } from "../../context/StoreContext";
 import "./Cart.css";
 import { Link, useNavigate } from "react-router-dom";
 import { calculateCartTotals } from "../../util/cartUtils";
+import { assets } from "../../assets/assets";
 
 const Cart = () => {
   const navigate = useNavigate();
@@ -31,7 +32,7 @@ const Cart = () => {
                   <div key={food.id} className="row cart-item mb-3">
                     <div className="col-md-3">
                       <img
-                        src={food.imageUrl}
+                        src={food.imageUrl || assets.logo}
                         alt={food.name}
                         className="img-fluid rounded"
                         width={100}

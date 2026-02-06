@@ -30,4 +30,6 @@ public interface OrderService {
     List<OrderResponse> getOrdersOfAllUsers();
 
     void updateOrderStatus(String orderId, String status);
+
+    List<OrderResponse> getOrdersByStatus(String status);
 }

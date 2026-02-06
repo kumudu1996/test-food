@@ -5,7 +5,9 @@ const API_URL = "http://localhost:8081/api/foods";
 export const addFood = async (foodData, image) => {
   const formData = new FormData();
   formData.append("food", JSON.stringify(foodData));
-  formData.append("file", image);
+  if (image) {
+    formData.append("file", image);
+  }
 
   try {
     await axios.post(API_URL, formData, {

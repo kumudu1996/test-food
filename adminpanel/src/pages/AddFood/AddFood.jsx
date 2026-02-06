@@ -21,10 +21,6 @@ const AddFood = () => {
 
   const onSubmitHandler = async (event) => {
     event.preventDefault();
-    if (!image) {
-      toast.error("Please select an image.");
-      return;
-    }
     try {
       await addFood(data, image);
       toast.success("Food added successfully.");

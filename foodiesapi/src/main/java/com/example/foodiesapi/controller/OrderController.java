@@ -63,6 +63,11 @@ public class OrderController {
         return orderService.getOrdersOfAllUsers();
     }
 
+    @GetMapping("/by-status")
+    public List<OrderResponse> getOrdersByStatus(@RequestParam String status) {
+        return orderService.getOrdersByStatus(status);
+    }
+
     @PatchMapping("/status/{orderId}")
     public void updateOrderStatus(@PathVariable String orderId, @RequestParam String status) {
         orderService.updateOrderStatus(orderId, status);

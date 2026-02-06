@@ -25,7 +25,7 @@ public class FoodController {
 
     @PostMapping
     public FoodResponse addFood(@RequestPart("food") String foodString,
-                                @RequestPart("file")MultipartFile file) {
+                                @RequestPart(value = "file", required = false) MultipartFile file) {
         ObjectMapper objectMapper = new ObjectMapper();
         FoodRequest request = null;
         try {
@@ -53,4 +53,3 @@ public class FoodController {
         foodService.deleteFood(id);
     }
 }
-

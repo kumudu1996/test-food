@@ -146,6 +146,13 @@ public class OrderServiceImpl implements OrderService {
         orderRepository.save(entity);
     }
 
+    @Override
+    public List<OrderResponse> getOrdersByStatus(String status) {
+        return orderRepository.findByOrderStatus(status).stream()
+                .map(this::convertToResponse)
+                .collect(Collectors.toList());
+    }
+
     // --- Helper Methods ---
 
     private String generatePayHereHash(String merchantId, String orderId, String amount, String currency, String merchantSecret) {
@@ -182,6 +189,11 @@ public class OrderServiceImpl implements OrderService {
                 .userId(newOrder.getUserId())
                 .paymentStatus(newOrder.getPaymentStatus())
                 .orderStatus(newOrder.getOrderStatus())
+                .deliveryLocation(newOrder.getDeliveryLocation())
+                .deliveryLat(newOrder.getDeliveryLat())
+                .deliveryLng(newOrder.getDeliveryLng())
+                .deliveryUpdatedAt(newOrder.getDeliveryUpdatedAt())
+                .deliveryLocations(newOrder.getDeliveryLocations())
                 .email(newOrder.getEmail())
                 .phoneNumber(newOrder.getPhoneNumber())
                 .orderedItems(newOrder.getOrderedItems())

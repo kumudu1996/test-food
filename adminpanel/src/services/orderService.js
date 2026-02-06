@@ -12,6 +12,18 @@ export const fetchAllOrders = async () => {
   }
 };
 
+export const fetchOrdersByStatus = async (status) => {
+  try {
+    const response = await axios.get(API_URL + "/by-status", {
+      params: { status },
+    });
+    return response.data;
+  } catch (error) {
+    console.error("Error occured while fetching orders by status", error);
+    throw error;
+  }
+};
+
 export const updateOrderStatus = async (orderId, status) => {
   try {
     const response = await axios.patch(

@@ -13,6 +13,9 @@ public interface OrderRepository extends MongoRepository<OrderEntity, String> {
     // Finds all orders for a specific user (Standard)
     List<OrderEntity> findByUserId(String userId);
 
+    // Finds all orders by status (Delivery UI)
+    List<OrderEntity> findByOrderStatus(String orderStatus);
+
     // CHANGED: Replaced Razorpay ID with PayHere Payment ID
     // This is optional but helpful if you want to search by the ID PayHere gives you.
     Optional<OrderEntity> findByPayherePaymentId(String payherePaymentId);

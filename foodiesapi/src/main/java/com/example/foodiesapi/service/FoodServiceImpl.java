@@ -59,8 +59,12 @@ public class FoodServiceImpl implements FoodService{
     @Override
     public FoodResponse addFood(FoodRequest request, MultipartFile file) {
         FoodEntity newFoodEntity = convertToEntity(request);
-        String imageUrl = uploadFile(file);
-        newFoodEntity.setImageUrl(imageUrl);
+        if (file != null && !file.isEmpty()) {
+            String imageUrl = uploadFile(file);
+            newFoodEntity.setImageUrl(imageUrl);
+        } else {
+            newFoodEntity.setImageUrl("");
+        }
         newFoodEntity = foodRepository.save(newFoodEntity);
         return convertToResponse(newFoodEntity);
     }
@@ -119,4 +123,3 @@ public class FoodServiceImpl implements FoodService{
                 .build();
     }
 }
-

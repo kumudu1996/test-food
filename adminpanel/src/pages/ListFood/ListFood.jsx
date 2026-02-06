@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import "./ListFood.css";
 import { deleteFood, getFoodList } from "../../services/foodService";
+import { assets } from "../../assets/assets";
 
 const ListFood = () => {
   const [list, setList] = useState([]);
@@ -50,7 +51,12 @@ const ListFood = () => {
               return (
                 <tr key={index}>
                   <td>
-                    <img src={item.imageUrl} alt="" height={48} width={48} />
+                    <img
+                      src={item.imageUrl || assets.logo}
+                      alt=""
+                      height={48}
+                      width={48}
+                    />
                   </td>
                   <td>{item.name}</td>
                   <td>{item.category}</td>

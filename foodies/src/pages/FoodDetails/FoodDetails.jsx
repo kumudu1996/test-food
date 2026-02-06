@@ -4,6 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { fetchFoodDetails } from "../../service/foodService";
 import { toast } from "react-toastify";
 import { StoreContext } from "../../context/StoreContext";
+import { assets } from "../../assets/assets";
 
 const FoodDetails = () => {
   const { id } = useParams();
@@ -35,7 +36,7 @@ const FoodDetails = () => {
           <div className="col-md-6">
             <img
               className="card-img-top mb-5 mb-md-0 details-image"
-              src={data.imageUrl}
+              src={data.imageUrl || assets.logo}
               alt="..."
             />
           </div>

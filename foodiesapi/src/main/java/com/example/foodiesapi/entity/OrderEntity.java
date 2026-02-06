@@ -1,6 +1,7 @@
 package com.example.foodiesapi.entity;
 
 import com.example.foodiesapi.io.OrderItem;
+import com.example.foodiesapi.io.DeliveryLocation;
 import lombok.Builder;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
@@ -26,6 +27,13 @@ public class OrderEntity {
 
     private String paymentStatus; // e.g., "Pending", "Success", "Failed"
     private String orderStatus;   // e.g., "Placed", "Preparing", "Delivered"
+
+    // Delivery tracking
+    private String deliveryLocation; // e.g., "Near City Mall, Colombo"
+    private Double deliveryLat;
+    private Double deliveryLng;
+    private Long deliveryUpdatedAt; // epoch millis
+    private List<DeliveryLocation> deliveryLocations;
 
     // --- PayHere Specific Fields ---
     private String payherePaymentId; // Stores the "payment_id" sent by PayHere
