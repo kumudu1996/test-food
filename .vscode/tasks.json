@@ -1,0 +1,70 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Foodies API (Spring Boot)",
+      "type": "shell",
+      "command": ".\\mvnw.cmd spring-boot:run",
+      "options": {
+        "cwd": "${workspaceFolder}\\foodiesapi",
+        "env": {
+          "JAVA_HOME": "C:\\Program Files\\Eclipse Adoptium\\jdk-17.0.18.8-hotspot",
+          "PATH": "C:\\Program Files\\Eclipse Adoptium\\jdk-17.0.18.8-hotspot\\bin;${env:PATH}"
+        }
+      },
+      "isBackground": true,
+      "problemMatcher": []
+    },
+    {
+      "label": "Foodies Frontend",
+      "type": "shell",
+      "command": "npm run dev",
+      "options": {
+        "cwd": "${workspaceFolder}\\foodies"
+      },
+      "isBackground": true,
+      "problemMatcher": []
+    },
+    {
+      "label": "Admin Panel",
+      "type": "shell",
+      "command": "npm run dev -- --port 5174",
+      "options": {
+        "cwd": "${workspaceFolder}\\adminpanel"
+      },
+      "isBackground": true,
+      "problemMatcher": []
+    },
+    {
+      "label": "Delivery Backend",
+      "type": "shell",
+      "command": "npm run dev",
+      "options": {
+        "cwd": "${workspaceFolder}\\delivery\\backend"
+      },
+      "isBackground": true,
+      "problemMatcher": []
+    },
+    {
+      "label": "Delivery Frontend",
+      "type": "shell",
+      "command": "npm run dev",
+      "options": {
+        "cwd": "${workspaceFolder}\\delivery\\frontend"
+      },
+      "isBackground": true,
+      "problemMatcher": []
+    },
+    {
+      "label": "Start All",
+      "dependsOrder": "parallel",
+      "dependsOn": [
+        "Foodies API (Spring Boot)",
+        "Foodies Frontend",
+        "Admin Panel",
+        "Delivery Backend",
+        "Delivery Frontend"
+      ]
+    }
+  ]
+}
